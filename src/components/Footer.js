@@ -3,6 +3,7 @@ import  Logo from './images/logo.png'
 export default function Footer(){
     return(
             <footer className="bg-white dark:bg-gray-900">
+            <div className="container mx-auto">
                 <div className="grid grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
                     <div>
                     <a href="/">
@@ -72,11 +73,13 @@ export default function Footer(){
                     </div>
                     </div>
                 </div>
+                </div>
                 <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+                    <div className='container mx-auto'>
                     <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="https://little-lemon-dev.vercel.app/">Little Lemon Restaurant</a>. All Rights Reserved.
                     </span>
+                    </div>
                 </div>
             </footer>
-
     )
 }
