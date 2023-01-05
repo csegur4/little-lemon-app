@@ -5,8 +5,7 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    IconButton,
-    Flex
+    IconButton
   } from '@chakra-ui/react'
 
 export default function Nav(){
@@ -38,22 +37,25 @@ export default function Nav(){
                         />
                         <MenuList
                         w="100vw"
-                        bgColor="#808080b8"
-                        h="100vh"
+                        bgColor="#333333e8"
+                        h="40vh"
+                        color="#fff"
+                        fontSize="23px"
+                        p="20px"
                         >
-                            <MenuItem>
+                            <MenuItem justifyContent="center" mb="10px" pt="20">
                                 Home
                             </MenuItem>
-                            <MenuItem>
+                            <MenuItem justifyContent="center" mb="10px" >
                                 About
                             </MenuItem>
-                            <MenuItem>
+                            <MenuItem justifyContent="center" mb="10px">
                                 Menu
                             </MenuItem>
-                            <MenuItem>
+                            <MenuItem justifyContent="center" mb="10px">
                                 Reservations
                             </MenuItem>
-                            <MenuItem>
+                            <MenuItem justifyContent="center" >
                                 Order Online
                             </MenuItem>
                         </MenuList>
