@@ -1,4 +1,4 @@
-import  Logo from './images/logo.png'
+import  Logo from './images/logo.webp'
 
 export default function Nav(){
     return(
@@ -6,7 +6,7 @@ export default function Nav(){
             <div className="menu container mx-auto">
                 <div>
                     <a href="/">
-                        <img src={Logo} alt="Little Lemon Restaurant Logo" width={300}/>
+                        <img src={Logo} alt="Little Lemon Restaurant Logo" width={200}/>
                     </a>
                 </div>
                 <div>

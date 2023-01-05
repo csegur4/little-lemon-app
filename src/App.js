@@ -2,6 +2,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Nav from './components/Nav';
+import Specials from './components/Specials';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
       <Nav />
       <Header />
+      <Specials />
       <Footer />
     </>
   );

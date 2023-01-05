@@ -18,3 +18,15 @@
     text-decoration: none;
     color: black;
   }
+
+  .main-header img {
+    border-radius: 16px;
+  }
+
+  .specials-section {
+    padding: 80px 0;
+  }
+
+  .specials-section .title{
+    padding: 20px 0;
+  }
