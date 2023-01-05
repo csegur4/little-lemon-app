@@ -1,3 +1,4 @@
+import {MdDeliveryDining} from 'react-icons/md'
 export default function Card (props) {
     return (
         <>
@@ -9,8 +10,8 @@ export default function Card (props) {
                         <p className="text-xl mb-2 text-right text-orange-500 ">${props.price}</p>
                     </div>
                     <p className="text-gray-700 text-base mb-5"> {props.desc}</p>
-                    <div className="inline-block align-bottom">
-                         <a className="font-bold" href={`order?=${props.id}`}>Order a Delivery</a>
+                    <div>
+                         <a className="font-bold flex" href={`order?=${props.id}`}>Order a Delivery <MdDeliveryDining className='text-2xl ml-2'/></a>
                     </div>
                 </div>
             </div>
