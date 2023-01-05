@@ -1,5 +1,6 @@
 import  Logo from './images/logo.webp'
-import {AiOutlineMenu} from 'react-icons/ai';
+import { useState } from 'react';
+import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
 import {
     Menu,
     MenuButton,
@@ -9,6 +10,9 @@ import {
   } from '@chakra-ui/react'
 
 export default function Nav(){
+
+    const [open, setOpen] = useState(false);
+
     return(
         <nav>
             <div className="menu container mx-auto">
@@ -32,8 +36,9 @@ export default function Nav(){
                         <MenuButton
                             as={IconButton}
                             aria-label='Options'
-                            icon={<AiOutlineMenu size='20px' />}
+                            icon={!open ? <AiOutlineMenu size='35px' onClick={()=> setOpen(true)} /> : <AiOutlineClose size='35px' onClick={()=> setOpen(false)} /> }
                             variant='outline'
+
                         />
                         <MenuList
                         w="100vw"
@@ -43,16 +48,16 @@ export default function Nav(){
                         fontSize="23px"
                         p="20px"
                         >
-                            <MenuItem justifyContent="center" mb="10px" pt="20">
+                            <MenuItem justifyContent="center" mb="15px" pt="20">
                                 Home
                             </MenuItem>
-                            <MenuItem justifyContent="center" mb="10px" >
+                            <MenuItem justifyContent="center" mb="15px" >
                                 About
                             </MenuItem>
-                            <MenuItem justifyContent="center" mb="10px">
+                            <MenuItem justifyContent="center" mb="15px">
                                 Menu
                             </MenuItem>
-                            <MenuItem justifyContent="center" mb="10px">
+                            <MenuItem justifyContent="center" mb="15px">
                                 Reservations
                             </MenuItem>
                             <MenuItem justifyContent="center" >
