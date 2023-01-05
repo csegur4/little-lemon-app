@@ -9,7 +9,7 @@ export default function Nav(){
                         <img src={Logo} alt="Little Lemon Restaurant Logo" width={200}/>
                     </a>
                 </div>
-                <div>
+                <div className='hidden md:block'>
                     <ul>
                         <li><a href="/" className="hover:text-gray-600">Home</a></li>
                         <li><a href="/about" className="hover:text-gray-600">About</a></li>
