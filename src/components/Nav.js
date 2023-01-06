@@ -36,7 +36,7 @@ export default function Nav(){
                         <MenuButton
                             as={IconButton}
                             aria-label='Options'
-                            icon={!open ? <AiOutlineMenu size='35px' onClick={()=> setOpen(true)} /> : <AiOutlineClose size='35px' onClick={()=> setOpen(false)} /> }
+                            icon={open ? <AiOutlineClose size='35px' onClick={()=> setOpen(!open)}/> : <AiOutlineMenu size='35px' onClick={()=> setOpen(!open)} />   }
                             variant='outline'
 
                         />
