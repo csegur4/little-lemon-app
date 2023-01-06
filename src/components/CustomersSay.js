@@ -11,20 +11,24 @@ export default function CustomersSay(){
         <div className='customers-say-section bg-[#edefee]'>
           <div className="container mx-auto">
             <div className="text-center">
-                <h2 className="text-4xl font-bold text-black pb-2 mx-2">
+                <h2 className="text-4xl font-bold text-black pb-2 mx-2 md:text-5xl">
                 Don't just take our word...
                 </h2>
                 <p className="text-xl pb-6 color-yellow">Read reviews from our customers</p>
             </div>
                 <Swiper
-                // install Swiper modules
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation
-                pagination={{ clickable: true }}
+
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
+                breakpoints={{
+                    768:{
+                        slidesPerView: 2
+                    }
+                }}
                 >
                 <SwiperSlide>
                         <blockquote

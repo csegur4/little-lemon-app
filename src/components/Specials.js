@@ -6,7 +6,7 @@ export default function Specials(){
         <div className="specials-section">
             <div className="container mx-auto">
                 <div className="title grid grid-cols-2 gap-1 items-center">
-                    <h2 className="text-4xl font-bold mt-0 text-black text-center">This weeks specials!</h2>
+                    <h2 className="text-4xl font-bold mt-0 text-black text-center md:text-5xl">This weeks specials!</h2>
                     <span> <a href="/reserve-table" className='transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#495e57] hover:text-white text-black font-bold py-4 px-6 rounded-lg'>Online Menu</a></span>
                 </div>
                 <div className="card grid md:grid-cols-3 md:gap-10">

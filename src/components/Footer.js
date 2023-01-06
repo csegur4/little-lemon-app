@@ -90,8 +90,8 @@ export default function Footer(){
                     </div>
                 </div>
                 </div>
-                <div className="px-4 py-6 bg-[#edefee]  md:flex md:items-center md:justify-between border-t border-[#495e57cc]">
-                    <div className='container mx-auto'>
+                <div className="px-4 py-6 bg-[#edefee]  md:flex md:items-center md:justify-between border-t border-[#495e57cc] md:border-t-0">
+                    <div className='container mx-auto md:text-center'>
                     <span className="text-sm text-gray-700  sm:text-center">© {new Date().getFullYear()} <a href="https://little-lemon-dev.vercel.app/">Little Lemon Restaurant</a>. All Rights Reserved. Develop with ❤️ by <a href="https://www.segurascode.com/">Carlos Segura</a>
                     </span>
                     </div>

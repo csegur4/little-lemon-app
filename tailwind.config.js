@@ -4,7 +4,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      inset: {
+        '-16':'-10rem',
+        '-23':'-23.5rem'
+      }
+    },
   },
   plugins: [],
 }
