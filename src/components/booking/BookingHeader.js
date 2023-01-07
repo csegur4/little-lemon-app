@@ -30,6 +30,8 @@ export default function BookingHeader(){
                         </div>
                 </div>
             </div>
+            <div>
+            </div>
         </header>
     )
 }
