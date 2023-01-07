@@ -37,7 +37,7 @@
     padding: 80px 0;
   }
 
-  nav ul li.active{
+  nav ul li.active {
     color: #495e57;
     font-weight: 700;
   }
@@ -51,6 +51,106 @@
  .swiper-button-prev:after {
   font-size: 35px !important;
  }
+
+
+ .fade-in {
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 1s;
+  -ms-animation: fadeIn ease 1s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.fade-out {
+  animation: fadeOut ease 1s;
+  -webkit-animation: fadeOut ease 1s;
+  -moz-animation: fadeOut ease 1s;
+  -o-animation: fadeOut ease 1s;
+  -ms-animation: fadeOut ease 1s;
+  animation-fill-mode: forwards; 
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+    visibility: visible;
+  }
+  100% {
+    opacity:0;
+    visibility: hidden;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity:1;
+    visibility: visible;
+  }
+  100% {
+    opacity:0;
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity:1;
+    visibility: visible;
+  }
+  100% {
+    opacity:0;
+    visibility: hidden;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity:1;
+    visibility: visible;
+  }
+  100% {
+    opacity:0;
+    visibility: hidden;
+  }
+}
+
 
   @media screen and (max-width: 768px) {
     .specials-section .card {
@@ -68,7 +168,15 @@
       padding-bottom: 60px;
     }
     .main-header {
-      padding-top: 20px;
+      padding-top: 80px;
       padding-bottom: 40px;
+    }
+    .menu{
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+      position: fixed;
+      z-index: 200;
     }
   }

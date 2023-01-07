@@ -10,13 +10,13 @@ import {
     IconButton
   } from '@chakra-ui/react'
 
-export default function Nav(){
+export default function Nav(props){
 
     const [open, setOpen] = useState(false);
 
     return(
         <nav>
-            <div className="menu container mx-auto items-center">
+            <div className={`menu container mx-auto items-center ${props.animation}`}>
                 <div>
                     <Link to="/">
                         <img src={Logo} alt="Little Lemon Restaurant Logo" width={200}/>
@@ -57,7 +57,7 @@ export default function Nav(){
                             <MenuItem justifyContent="center" mb="15px">
                                 <Link to={"/booking"}>Booking</Link>
                             </MenuItem>
-                            <MenuItem justifyContent="center" >
+                            <MenuItem justifyContent="center" mb="15px">
                                 <Link to={"/order-online"}>Order Online</Link>
                             </MenuItem>
                             <MenuItem justifyContent="center" >

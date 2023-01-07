@@ -1,3 +1,4 @@
+import { useState, useCallback, useEffect } from "react";
 import './App.css';
 import Chicago from './components/Chicago';
 import CustomersSay from './components/CustomersSay';
@@ -12,11 +13,43 @@ import NotFoundPage from './components/404/NotFoundPage';
 
 
 function App() {
+
+  const [y, setY] = useState(window.scrollY);
+  const [effect, setEffect] = useState('');
+
+  const handleNavigation = useCallback(
+    (e) => {
+      const window = e.currentTarget;
+      if (y > window.scrollY ) {
+        setEffect('fade-in');
+      } else if (y < window.scrollY && window.scrollY >= 200 ) {
+        setEffect('fade-out');
+      }
+      setY(window.scrollY);
+    },
+    [y]
+  );
+
+  useEffect(() => {
+    setY(window.scrollY);
+    window.addEventListener("scroll", handleNavigation);
+
+    return () => {
+      window.removeEventListener("scroll", handleNavigation);
+    };
+  }, [handleNavigation]);
+
   return (
     <>
-      <Nav />
+      <Nav animation={effect} />
       <Routes>
-          <Route path="/" element={[<Header key={"01"} />, <Specials key={"02"} />, <CustomersSay key={"03"} />,<Chicago key={"04"} />]} />
+          <Route path="/" element={[<main key={"00"}>
+                                      <Header key={"01"}  />
+                                      <Specials key={"02"} />
+                                      <CustomersSay key={"03"} />
+                                      <Chicago key={"04"} />
+                                    </main>]}
+          />
           <Route path="/booking" element={<BookingHeader/>} />
           <Route path="*" element={<NotFoundPage/>}/>
       </Routes>
