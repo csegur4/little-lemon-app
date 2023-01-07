@@ -1,4 +1,5 @@
 import  Logo from './images/logo.webp'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import { useState } from 'react';
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
 import {
@@ -15,28 +16,27 @@ export default function Nav(){
 
     return(
         <nav>
-            <div className="menu container mx-auto">
+            <div className="menu container mx-auto items-center">
                 <div>
-                    <a href="/">
+                    <Link to="/">
                         <img src={Logo} alt="Little Lemon Restaurant Logo" width={200}/>
-                    </a>
+                    </Link>
                 </div>
                 <div className='hidden md:block'>
                     <ul>
-                        <li><a href="/" className="hover:text-gray-600">Home</a></li>
-                        <li><a href="/about" className="hover:text-gray-600">About</a></li>
-                        <li><a href="/menu" className="hover:text-gray-600">Menu</a></li>
-                        <li><a href="/reservations" className="hover:text-gray-600">Reservations</a></li>
-                        <li><a href="/order-online" className="hover:text-gray-600">Order Online</a></li>
-                        <li><a href="/login" className="hover:text-gray-600">Log In</a></li>
+                        <CustomLink to="/about" className="hover:text-gray-600"> About</CustomLink>
+                        <CustomLink to="/menu" className="hover:text-gray-600"> Menu</CustomLink>
+                        <CustomLink to="/booking" className="hover:text-gray-600"> Booking</CustomLink>
+                        <CustomLink to="/order-online" className="hover:text-gray-600"> Order Online</CustomLink>
+                        <CustomLink to="/login" className="hover:text-gray-600"> Login</CustomLink>
                     </ul>
                 </div>
-                <div className='md:hidden'>
+                <div className='md:hidden pr-3'>
                     <Menu>
                         <MenuButton
                             as={IconButton}
                             aria-label='Options'
-                            icon={open ? <AiOutlineClose size='35px' onClick={()=> setOpen(!open)}/> : <AiOutlineMenu size='35px' onClick={()=> setOpen(!open)} />   }
+                            icon={open ? <AiOutlineClose size='35px' onFocus={()=> console.log("sali del boton close")} onClick={()=> setOpen(!open)} /> : <AiOutlineMenu size='35px' onBlur={()=> console.log("sali del boton normal")} onClick={()=> setOpen(!open)} />   }
                             variant='outline'
 
                         />
@@ -48,20 +48,20 @@ export default function Nav(){
                         fontSize="23px"
                         p="20px"
                         >
-                            <MenuItem justifyContent="center" mb="15px" pt="20">
-                                Home
-                            </MenuItem>
-                            <MenuItem justifyContent="center" mb="15px" >
-                                About
+                            <MenuItem justifyContent="center" mb="15px" pt="25px" >
+                                <Link to={"/about"}>About</Link>
                             </MenuItem>
                             <MenuItem justifyContent="center" mb="15px">
-                                Menu
+                                <Link to={"/menu"}>Menu</Link>
                             </MenuItem>
                             <MenuItem justifyContent="center" mb="15px">
-                                Reservations
+                                <Link to={"/booking"}>Booking</Link>
                             </MenuItem>
                             <MenuItem justifyContent="center" >
-                                Order Online
+                                <Link to={"/order-online"}>Order Online</Link>
+                            </MenuItem>
+                            <MenuItem justifyContent="center" >
+                                <Link to={"/login"}>Log In</Link>
                             </MenuItem>
                         </MenuList>
                     </Menu>
@@ -69,4 +69,17 @@ export default function Nav(){
             </div>
         </nav>
     )
+}
+
+function CustomLink({to, children, ...props}){
+    const resolvedPath = useResolvedPath(to);
+    const isActive = useMatch({path: resolvedPath.pathname, end:true});
+
+    return(
+        <li className={isActive ? "active" : ""}>
+            <Link to={to} {...props}>
+                {children}
+            </Link>
+        </li>
+)
 }

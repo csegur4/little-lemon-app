@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import  DeliciusDish from './images/delicius_dish.webp'
 import  DeliciusDishD from './images/delicius_dish_d.webp'
 
@@ -12,11 +13,11 @@ export default function Header(){
                         <p className="text-white mt-5 mb-10"> We are a family owned Mediterranean restaurant, focused on
                             traditional recipes served with a modern twist
                         </p>
-                        <a href="/reserve-table" className='transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#333333] hover:text-white text-black font-bold py-3 px-6 rounded-lg'>Reserve a Table</a>
+                        <Link to="/booking" className='transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#333333] hover:text-white text-black font-bold py-3 px-6 rounded-lg'>Reserve a Table</Link>
                     </div>
                     <div className='pb-5 md:pb-0'>
                         <img className='mx-auto md:hidden md:mt-10 rounded-2xl abolute' src={DeliciusDish} alt="Delicius Dish in Little Lemon Restaurant" width={350}/>
-                        <img className=' md:block rounded-2xl hidden' src={DeliciusDishD} alt="Delicius Dish in Little Lemon Restaurant" width={550}/>
+                        <img className='mx-auto md:block rounded-2xl hidden' src={DeliciusDishD} alt="Delicius Dish in Little Lemon Restaurant" width={550}/>
                     </div>
                 </div>
             </div>

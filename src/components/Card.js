@@ -1,4 +1,5 @@
 import {MdDeliveryDining} from 'react-icons/md'
+import { Link } from 'react-router-dom';
 export default function Card (props) {
     return (
         <>
@@ -11,7 +12,7 @@ export default function Card (props) {
                     </div>
                     <p className="text-gray-700 text-base mb-5"> {props.desc}</p>
                     <div>
-                         <a className="font-bold flex" href={`order?=${props.id}`}>Order a Delivery <MdDeliveryDining className='text-2xl ml-2'/></a>
+                         <Link className="font-bold flex" to={`order?=${props.id}`}>Order a Delivery <MdDeliveryDining className='text-2xl ml-2'/></Link>
                     </div>
                 </div>
             </div>
