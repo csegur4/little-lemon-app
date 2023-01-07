@@ -11,9 +11,6 @@ import {
   } from '@chakra-ui/react'
 
 export default function Nav(props){
-
-    const [open, setOpen] = useState(false);
-
     return(
         <nav>
             <div className={`menu container mx-auto items-center ${props.animation}`}>
@@ -33,12 +30,14 @@ export default function Nav(props){
                 </div>
                 <div className='md:hidden pr-3'>
                     <Menu>
+                    {({ isOpen }) => (
+                    <>
                         <MenuButton
                             as={IconButton}
+                            isActive={isOpen}
                             aria-label='Options'
-                            icon={open ? <AiOutlineClose size='35px' onFocus={()=> console.log("sali del boton close")} onClick={()=> setOpen(!open)} /> : <AiOutlineMenu size='35px' onBlur={()=> console.log("sali del boton normal")} onClick={()=> setOpen(!open)} />   }
+                            icon={isOpen ? <AiOutlineClose size='35px' /> : <AiOutlineMenu size='35px'/> }
                             variant='outline'
-
                         />
                         <MenuList
                         w="100vw"
@@ -64,6 +63,8 @@ export default function Nav(props){
                                 <Link to={"/login"}>Log In</Link>
                             </MenuItem>
                         </MenuList>
+                    </>
+                    )}
                     </Menu>
                 </div>
             </div>
