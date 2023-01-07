@@ -95,8 +95,8 @@ export default function CustomersSay(){
                                     src="https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
                                     className="h-24 w-24 rounded-full object-cover shadow-md"
                                     />
-                                    <p className="pl-2 text-2xl font-bold text-[#333333] sm:text-3xl">
-                                    Stayin' Alive
+                                    <p className="pl-4 text-2xl font-bold text-[#333333] sm:text-3xl">
+                                    Anabella B.
                                     </p>
                                 </div>
                                 <p className="mt-4 leading-relaxed text-gray-500">
@@ -176,8 +176,8 @@ export default function CustomersSay(){
                                     src="https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
                                     className="h-24 w-24 rounded-full object-cover shadow-md"
                                     />
-                                    <p className="pl-2 text-2xl font-bold text-[#333333] sm:text-3xl">
-                                    Stayin' Alive
+                                    <p className="pl-4 text-2xl font-bold text-[#333333] sm:text-3xl">
+                                     Kari Job
                                     </p>
                                 </div>
                                 <p className="mt-4 leading-relaxed text-gray-500">
@@ -257,8 +257,8 @@ export default function CustomersSay(){
                                     src="https://images.unsplash.com/photo-1599566219227-2efe0c9b7f5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
                                     className="h-24 w-24 rounded-full object-cover shadow-md"
                                     />
-                                    <p className="pl-2 text-2xl font-bold text-[#333333] sm:text-3xl">
-                                    Stayin' Alive
+                                    <p className="pl-4 text-2xl font-bold text-[#333333] sm:text-3xl">
+                                     Marcela G.
                                     </p>
                                 </div>
                                 <p className="mt-4 leading-relaxed text-gray-500">
