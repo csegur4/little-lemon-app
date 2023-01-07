@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import BookReservation from "/Users/carlossegura/Documents/FEDC4Meta/Course 8 Front-End Developer Capstone/little-lemon-app/src/components/images/book_reservation.webp"
+import BookReservation from "../images/book_reservation.webp"
 
 export default function BookingHeader(){
     return(
