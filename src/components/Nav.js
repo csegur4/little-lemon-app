@@ -1,6 +1,5 @@
 import  Logo from './images/logo.webp'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
-import { useState } from 'react';
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
 import {
     Menu,

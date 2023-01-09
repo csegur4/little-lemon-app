@@ -9,6 +9,7 @@ import Specials from './components/Specials';
 import {Route, Routes} from "react-router-dom"
 import BookingHeader from './components/booking/BookingHeader';
 import NotFoundPage from './components/404/NotFoundPage';
+import BookingForm from "./components/booking/BookingForm";
 
 
 
@@ -50,7 +51,11 @@ function App() {
                                       <Chicago key={"04"} />
                                     </main>]}
           />
-          <Route path="/booking" element={<BookingHeader/>} />
+          <Route path="/booking" element={[<main key={"05"}><BookingHeader key={"06"}/>
+                                              <BookingForm key={"07"} />
+                                            </main>
+                                          ]}
+          />
           <Route path="*" element={<NotFoundPage/>}/>
       </Routes>
       <Footer />
