@@ -37,7 +37,7 @@ export default function BookingForm(){
             <h2 className="text-4xl  text-black pb-6 mx-2 md:text-5x">Let's start!</h2>
                 <form onSubmit={formik.handleSubmit} >
                     <div className="form-group">
-                        <label htmlFor="datepicker" className="block mb-2 text-md font-medium text-gray-900 dark:text-white">Enter a date</label>
+                        <label htmlFor="date" className="block mb-2 text-md font-medium text-gray-900">Enter a date</label>
                         <input
                                 type="text"
                                 id="date"
@@ -46,19 +46,19 @@ export default function BookingForm(){
                                 onBlur={formik.handleBlur}
                                 value={formik.values.date}
                                 placeholder="MM/DD/YYYY"
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         />
-                        {formik.touched.date && formik.errors.date ? <p className="mt-2 text-sm text-red-600 dark:text-red-500"> {formik.errors.date} </p> : null }
+                        {formik.touched.date && formik.errors.date ? <p className="mt-2 text-sm text-red-600"> {formik.errors.date} </p> : null }
                     </div>
                     <div className="form-group relative pt-6">
-                        <label htmlFor="time" className="block mb-2 text-md font-medium text-gray-900 dark:text-white">Available Times</label>
+                        <label htmlFor="time" className="block mb-2 text-md font-medium text-gray-900">Available Times</label>
                         <select
                                 id="time"
                                 name="time"
                                 value={formik.values.time}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         >
                             <option value="17:00">17:00</option>
                             <option value="18:00">18:00</option>
@@ -68,7 +68,7 @@ export default function BookingForm(){
                         </select>
                     </div>
                     <div className="form-group pt-6">
-                        <label htmlFor="guests" className="block mb-2 text-md font-medium text-gray-900 dark:text-white">Number of Guests</label>
+                        <label htmlFor="guests" className="block mb-2 text-md font-medium text-gray-900">Number of Guests</label>
                         <input
                                 type="text"
                                 id="guests"
@@ -77,19 +77,19 @@ export default function BookingForm(){
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.guests}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         />
-                        {formik.touched.guests && formik.errors.guests ? <p className="mt-2 text-sm text-red-600 dark:text-red-500"> {formik.errors.guests} </p> : null }
+                        {formik.touched.guests && formik.errors.guests ? <p className="mt-2 text-sm text-red-600"> {formik.errors.guests} </p> : null }
                     </div>
                     <div className="form-group relative mb-6 pt-6">
-                        <label htmlFor="occasion" className="block mb-2 text-md font-medium text-gray-900 dark:text-white">Occasion</label>
+                        <label htmlFor="occasion" className="block mb-2 text-md font-medium text-gray-900">Occasion</label>
                         <select
                                 id="occasion"
                                 name="occasion"
                                 value={formik.values.occasion}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         >
                             <option value="birthday">Birthday</option>
                             <option value="anniversary">Anniversary</option>
