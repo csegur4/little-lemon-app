@@ -34,6 +34,7 @@ const submitAPI = function(formData) {
 export default function BookingForm(){
 
         const [times, setTimesArray] = useState([]);
+        const [submit, setSubmit] = useState (false);
 
         const today = new Date();
         today.setDate(today.getDate() - 1);
@@ -55,7 +56,7 @@ export default function BookingForm(){
                 .max(10, "Maximum number of Guests is 10")
             }),
             onSubmit: (values) => {
-                submitAPI(values) ? console.log("Form successfully submitted") : console.log("Error")
+                submitAPI(values) ? setSubmit(true) : console.log("Error")
             }
         });
 
@@ -129,7 +130,8 @@ export default function BookingForm(){
                         </select>
                     </div>
                     <div className="text-center">
-                        <button type="submit" className="transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#495e57] hover:text-white text-black font-bold py-2 px-8 rounded-lg">Book Now!</button>
+                        <button type="submit" className="mt-4 transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#495e57] hover:text-white text-black font-bold py-2 px-8 rounded-lg">Book Now!</button>
+                        { submit ? <p className="mt-4 text-sm text-green-600"><span className="font-[700]">Well done!</span> Some success message.</p> : null}
                     </div>
                 </form>
             </div>
