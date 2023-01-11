@@ -1,25 +1,53 @@
 import { useFormik } from 'formik';
+import { useState } from 'react';
 import * as Yup from "yup"
+
+
+// Meta API
+const seededRandom = function (seed) {
+    var m = 2**35 - 31;
+    var a = 185852;
+    var s = seed % m;
+    return function () {
+        return (s = s * a % m) / m;
+    };
+}
+
+const fetchAPI = function(date) {
+    let result = [];
+    let random = seededRandom(date.getDate());
+
+    for(let i = 17; i <= 23; i++) {
+        if(random() < 0.5) {
+            result.push(i + ':00');
+        }
+        if(random() < 0.5) {
+            result.push(i + ':30');
+        }
+    }
+    return result;
+};
+const submitAPI = function(formData) {
+    return true;
+};
 
 export default function BookingForm(){
 
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    let mm = today.getMonth() + 1;
-    let dd = today.getDate();
-    if (dd < 10) dd = '0' + dd;
-    if (mm < 10) mm = '0' + mm;
-    const formattedToday = mm + '/' + dd + '/' + yyyy;
+        const [times, setTimesArray] = useState([]);
+
+        const today = new Date();
+        today.setDate(today.getDate() - 1);
+        today.toLocaleString();
 
         const formik = useFormik({
             initialValues: {
                 date: "",
                 guests: "",
                 occasion: "Birthday",
-                time: "17:00"
+                time: "Select a date"
             },
             validationSchema: Yup.object({
-                date: Yup.date().typeError("Please enter a valid date, format: MM/DD/YYYY").required().min(formattedToday, "Date is too early"),
+                date: Yup.date().typeError("Please enter a valid date, format: MM/DD/YYYY").required("Date is a requiered field").min(today, "Date is too early"),
                 guests: Yup.number()
                 .typeError("Please enter a valid number")
                 .required("Guests number is required")
@@ -27,11 +55,11 @@ export default function BookingForm(){
                 .max(10, "Maximum number of Guests is 10")
             }),
             onSubmit: (values) => {
-                console.log(values)
+                submitAPI(values) ? console.log("Form successfully submitted") : console.log("Error")
             }
         });
 
-    return(
+        return(
         <div className="booking-form">
             <div className="container mx-auto">
             <h2 className="text-4xl  text-black pb-6 mx-2 md:text-5x">Let's start!</h2>
@@ -39,32 +67,34 @@ export default function BookingForm(){
                     <div className="form-group">
                         <label htmlFor="date" className="block mb-2 text-md font-medium text-gray-900">Enter a date</label>
                         <input
-                                type="text"
+                                type="date"
                                 id="date"
                                 name="date"
-                                onChange={formik.handleChange}
+                                onChange={(e)=> {
+                                     const timeArray = fetchAPI(new Date(e.target.value))
+                                     setTimesArray(timeArray)
+                                     formik.handleChange(e)
+                                }
+                                }
                                 onBlur={formik.handleBlur}
                                 value={formik.values.date}
                                 placeholder="MM/DD/YYYY"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         />
-                        {formik.touched.date && formik.errors.date ? <p className="mt-2 text-sm text-red-600"> {formik.errors.date} </p> : null }
+                        { formik.errors.date ? <p className="mt-2 text-sm text-red-600"> {formik.errors.date} </p> : null }
                     </div>
                     <div className="form-group relative pt-6">
                         <label htmlFor="time" className="block mb-2 text-md font-medium text-gray-900">Available Times</label>
                         <select
                                 id="time"
                                 name="time"
+                                placeholder="Select a date to see available times"
                                 value={formik.values.time}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         >
-                            <option value="17:00">17:00</option>
-                            <option value="18:00">18:00</option>
-                            <option value="19:00">19:00</option>
-                            <option value="20:00">20:00</option>
-                            <option value="21:00">21:00</option>
+                            { times.length === 0 || formik.errors.date   ? <option value="Select a date to see available times">Select a date to see available times</option> : times.map(time=> (<option key={time} value={time}>{time}</option>))}
                         </select>
                     </div>
                     <div className="form-group pt-6">
@@ -99,7 +129,7 @@ export default function BookingForm(){
                         </select>
                     </div>
                     <div className="text-center">
-                        <button type="submit" className="transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#495e57] hover:text-white text-black font-bold py-2 px-8 rounded-lg">Next</button>
+                        <button type="submit" className="transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#495e57] hover:text-white text-black font-bold py-2 px-8 rounded-lg">Book Now!</button>
                     </div>
                 </form>
             </div>
