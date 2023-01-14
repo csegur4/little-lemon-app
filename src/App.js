@@ -7,9 +7,11 @@ import Header from './components/Header';
 import Nav from './components/Nav';
 import Specials from './components/Specials';
 import {Route, Routes} from "react-router-dom"
-import BookingHeader from './components/booking/BookingHeader';
+import PagesHeader from './components/booking/PagesHeader';
 import NotFoundPage from './components/404/NotFoundPage';
 import BookingForm from "./components/booking/BookingForm";
+import ConfirmationPage from "./components/booking/ConfirmationPage";
+import BookReservation from "./components/images/book_reservation.webp"
 
 
 
@@ -51,11 +53,12 @@ function App() {
                                       <Chicago key={"04"} />
                                     </main>]}
           />
-          <Route path="/booking" element={[<main key={"05"}><BookingHeader key={"06"}/>
+          <Route path="/booking" element={[<main key={"05"}><PagesHeader key={"06"} title="Book a Reservation" img={BookReservation}/>
                                               <BookingForm key={"07"} />
                                             </main>
                                           ]}
           />
+          <Route path="/booking/confirmation" element={<main key={"08"}><PagesHeader key={"09"} title="Book Confirmation" img={BookReservation} /> <ConfirmationPage key={"10"}/></main>}/>
           <Route path="*" element={<NotFoundPage/>}/>
       </Routes>
       <Footer />

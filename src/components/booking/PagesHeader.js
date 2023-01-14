@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom"
-import BookReservation from "../images/book_reservation.webp"
 
-export default function BookingHeader(){
+export default function PagesHeader(props){
     return(
         <header className="book-reservation">
             <div className="container mx-auto">
-                <div className="w-full bg-cover bg-center bg-image" style={{backgroundImage: `url(${BookReservation})`}}>
+                <div className="w-full bg-cover bg-center bg-image" style={{backgroundImage: `url(${props.img})`}}>
                         <div className="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-70">
                             <div className="text-center">
-                                <h1 className="text-white text-5xl font-semibold  md:text-3xl">Book a Reservation</h1>
+                                <h1 className="text-white text-5xl font-semibold  md:text-3xl">{props.title}</h1>
                                 <div className="flex" aria-label="Breadcrumb">
                                     <ol className="inline-flex items-center space-x-1 md:space-x-3">
                                         <li className="inline-flex items-center">
@@ -20,7 +19,7 @@ export default function BookingHeader(){
                                         <li aria-current="page">
                                         <div className="flex items-center">
                                             <svg aria-hidden="true" className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-                                            <span className="ml-1 text-lg font-medium text-white md:ml-2">Book Reservation</span>
+                                            <span className="ml-1 text-lg font-medium text-white md:ml-2">{props.title}</span>
                                         </div>
                                         </li>
                                     </ol>
