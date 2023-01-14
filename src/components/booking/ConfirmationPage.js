@@ -1,6 +1,11 @@
 import { useState } from "react"
 import { Link} from "react-router-dom"
 
+// Meta API
+const submitAPI = function(formData) {
+    return true;
+};
+
 export default function ConfirmationPage(){
     const date = JSON.parse(localStorage.getItem("date"))
     const time = JSON.parse(localStorage.getItem("time"))
@@ -12,8 +17,12 @@ export default function ConfirmationPage(){
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log("sucess")
-        setSubmit(1)
+        const data = {date: date, time: time, guests : guests, occasion : occasion}
+        if(submitAPI(JSON.stringify(data))){
+            console.log("Data sent successfully")
+            console.log(JSON.stringify(data))
+            setSubmit(1)
+        }
     }
 
     return(

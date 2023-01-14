@@ -29,9 +29,7 @@ const fetchAPI = function(date) {
     }
     return result;
 };
-const submitAPI = function(formData) {
-    return true;
-};
+
 
 export default function BookingForm(){
 
@@ -66,15 +64,12 @@ export default function BookingForm(){
                 .min(1, "Number of Guests atleast 1")
                 .max(10, "Maximum number of Guests is 10")
             }),
-            onSubmit: (values) => {
-                if(submitAPI(values)) {
+            onSubmit: () => {
                     localStorage.setItem("date", JSON.stringify(formik.values.date));
                     localStorage.setItem("guests", JSON.stringify(formik.values.guests));
                     localStorage.setItem("occasion", JSON.stringify(formik.values.occasion));
                     !localStorage.getItem("visit") ? localStorage.setItem("time", JSON.stringify(formik.values.time)) : localStorage.setItem("time", JSON.stringify(refTime.current.value));;
                     navigate("/booking/confirmation")
-
-                }
             }
         });
 
