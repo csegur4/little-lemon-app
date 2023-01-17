@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export default function PagesHeader(props){
     return(
         <header className="book-reservation">
-            <div className="container mx-auto">
+            <div className="mx-auto">
                 <div className="w-full bg-cover bg-center bg-image" style={{backgroundImage: `url(${props.img})`}}>
                         <div className="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-70">
                             <div className="text-center">
