@@ -7,6 +7,7 @@ const submitAPI = function(formData) {
 };
 
 export default function ConfirmationPage(){
+
     const date = JSON.parse(localStorage.getItem("date"))
     const time = JSON.parse(localStorage.getItem("time"))
     const guests = JSON.parse(localStorage.getItem("guests"))
