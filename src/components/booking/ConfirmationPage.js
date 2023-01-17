@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { Link} from "react-router-dom"
+import { useState } from "react";
+import { Link} from "react-router-dom";
 
 // Meta API
 const submitAPI = function(formData) {
@@ -34,13 +34,12 @@ export default function ConfirmationPage(){
                 <p className="text-xl pb-4">Time: <span className="font-semibold">{time}</span></p>
                 <p className="text-xl pb-4">Number of guests: <span className="font-semibold">{guests}</span></p>
                 <p className="text-xl pb-4">Reservation type: <span className="font-semibold">{occasion}</span></p>
-
                 <div className="text-center">
-                    <Link  to="/booking" className="mr-6 mt-4 transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#495e57] hover:text-white text-black font-bold py-2 px-8 rounded-lg">Edit</Link>
-                    <Link  type="submit" onClick={handleSubmit} className="mt-4 transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#495e57] hover:text-white text-black font-bold py-2 px-8 rounded-lg">Book Now</Link>
+                    <Link to="/booking" className="mr-6 mt-4 transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#495e57] hover:text-white text-black font-bold py-2 px-8 rounded-lg">Edit</Link>
+                    <Link type="submit" onClick={handleSubmit} className="mt-4 transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#495e57] hover:text-white text-black font-bold py-2 px-8 rounded-lg">Book Now</Link>
                 </div>
                 { submit ? <p className="mt-4 text-sm text-green-600 text-center"><span className="font-[700]">Well done!</span> Reservation successfully completed.</p> : null}
-        </div>
+            </div>
         </div>
     )
 }

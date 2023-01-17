@@ -7,7 +7,7 @@ export default function NotFoundPage(){
                 <div className="grid grid-cols-1 gap-2 items-center">
                     <div className='md:py-28 md:pr-28 p-10 md:p-0'>
                         <h1 className="text-5xl font-bold mt-0 md:mb-5 text-[#f4c314] md:text-6xl"> Oops!</h1>
-                        <p className="text-white mt-5 mb-10"> This page can’t be found</p>
+                        <p className="text-white mt-5 mb-10"> This page is under construction</p>
                         <Link to="/" className='transition ease-in-out delay-100 bg-[#f4c314] hover:bg-[#333333] hover:text-white text-black font-bold py-3 px-6 rounded-lg'>Back To Home</Link>
                     </div>
                 </div>

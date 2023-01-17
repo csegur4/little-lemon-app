@@ -1,9 +1,7 @@
 import { useFormik } from 'formik';
 import { useEffect, useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import * as Yup from "yup"
-
-
+import {useNavigate} from 'react-router-dom';
+import * as Yup from "yup";
 
 // Meta API
 const seededRandom = function (seed) {
@@ -29,7 +27,6 @@ const fetchAPI = function(date) {
     }
     return result;
 };
-
 
 export default function BookingForm(){
 
@@ -79,24 +76,6 @@ export default function BookingForm(){
             <h2 className="text-4xl  text-black pb-6 mx-2 md:text-5x">Let's start!</h2>
                 <form onSubmit={formik.handleSubmit} >
                     <div className="form-group">
-                        {/* <label htmlFor="date" className="block mb-2 text-md font-medium text-gray-900">Enter a date</label>
-                        <input
-                                type="date"
-                                id="date"
-                                name="date"
-                                onChange={(e)=> {
-                                     const timeArray = fetchAPI(new Date(e.target.value))
-                                     setTimesArray(timeArray)
-                                     formik.handleChange(e)
-                                }
-                                }
-                                onBlur={formik.handleBlur}
-                                value={formik.values.date}
-                                placeholder="MM/DD/YYYY"
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                        />
-                        { formik.errors.date ? <p className="mt-2 text-sm text-red-600"> {formik.errors.date} </p> : null } */}
-
                         <div>
                         <label htmlFor="date" className='pr-3'>Select a date:</label>
                             <span className="datepicker-toggle">
@@ -153,7 +132,7 @@ export default function BookingForm(){
                                 value={formik.values.guests}
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         />
-                        {formik.touched.guests && formik.errors.guests ? <p className="mt-2 text-sm text-red-600"> {formik.errors.guests} </p> : null }
+                        { formik.errors.guests ? <p className="mt-2 text-sm text-red-600"> {formik.errors.guests} </p> : null }
                     </div>
                     <div className="form-group relative mb-6 pt-6">
                         <label htmlFor="occasion" className="block mb-2 text-md font-medium text-gray-900">Occasion</label>

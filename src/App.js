@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
+import {Route, Routes} from "react-router-dom";
 import './App.css';
 import Chicago from './components/Chicago';
 import CustomersSay from './components/CustomersSay';
@@ -6,7 +7,6 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Specials from './components/Specials';
-import {Route, Routes} from "react-router-dom"
 import PagesHeader from './components/booking/PagesHeader';
 import NotFoundPage from './components/404/NotFoundPage';
 import BookingForm from "./components/booking/BookingForm";
@@ -53,11 +53,13 @@ function App() {
                                       <Chicago key={"04"} />
                                     </main>]}
           />
+         
           <Route path="/booking" element={[<main key={"05"}><PagesHeader key={"06"} title="Book a Reservation" img={BookReservation}/>
-                                              <BookingForm key={"07"} />
+                                                            <BookingForm key={"07"} />
                                             </main>
                                           ]}
           />
+          
           <Route path="/booking/confirmation" element={<main key={"08"}><PagesHeader key={"09"} title="Book Confirmation" img={BookReservation} /> <ConfirmationPage key={"10"}/></main>}/>
           <Route path="*" element={<NotFoundPage/>}/>
       </Routes>
